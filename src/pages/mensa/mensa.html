@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Minhas Mensagens</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <p></p>
+  <ion-item> 
+      <ion-label color="primary" >Pessoas</ion-label>
+      <ion-select  multiple="true" [(ngModel)]="note">
+          <ion-option *ngFor="let datau of datau"
+          [class.selected]="datau === selectedata" (ionSelect)="onusr(datau.id)">{{datau.nome}} </ion-option> 
+      </ion-select>
+    </ion-item>
+  <ion-item>
+    <ion-textarea placeholder="Escreva Aqui" [(ngModel)]="notes" name="note" autocomplete="on" autocorrect="on" (ionChange)="validar_form($event)"></ion-textarea>
+  </ion-item>
+  <button ion-button>
+    <ion-icon name="ios-settings" type="button" (click)= "enviar()" >Enviar</ion-icon>
+  </button>
+
+  <ion-grid *ngFor="let data of data " (click)="onSelect(data)" [class.selected]="data === selectedata">
+
+    <ion-row>
+      <ion-col col-10>
+     
+      De: <font color="blue">{{data.nome}}</font>  <p></p> para:  <font color="blue">{{data.des}}</font> <p></p>
+      {{data.hora}} 
+        <p></p> {{data.mensa}}
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button>
+          <ion-icon name="trash" type="button" (click)= "delete(data)"></ion-icon> 
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+</ion-content>

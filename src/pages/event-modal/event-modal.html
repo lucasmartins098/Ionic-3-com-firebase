@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Evento</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Titulo" [(ngModel)]="event.title" (ionChange)="validar_form($event)"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label>Inicio</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate" (ionChange)="ondata($event,1)"></ion-datetime>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label>Fim</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"(ionChange)="ondata($event,2)"></ion-datetime>
+    </ion-item> 
+    <ion-item> 
+      <ion-label color="primary" >Pessoas</ion-label>
+      <ion-select  multiple="true" [(ngModel)]="event.inscritos">
+          <ion-option *ngFor="let datau of datau"
+          [class.selected]="datau === selectedata" (ionSelect)="onusr(datau.id)">{{datau.nome}} </ion-option> 
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item >
+        <ion-label color="primary">Avulso:</ion-label>
+        <ion-input type="text" [(ngModel)]="event.fora" (ionChange)="onfora(event.fora)"></ion-input>
+    </ion-item>
+
+    <ion-item> 
+        <ion-label color="primary" >Tarefas</ion-label>
+        <ion-select  multiple="true" [(ngModel)]="event.tarefas">
+            <ion-option *ngFor="let datat of datat"
+            [class.selected]="datat === selectedata" (ionSelect)="ontarefas(datat.id)">{{datat.nome}} </ion-option> 
+        </ion-select>
+        
+      </ion-item>
+ 
+    
+  </ion-list>
+ 
+  <button ion-button full icon-left (click)="save()" [disabled]="!isenabled">
+    <ion-icon name="checkmark"></ion-icon> Pronto
+  </button>
+</ion-content>

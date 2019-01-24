@@ -1,0 +1,3 @@
+db: integra_casa
+user: casa
+pass: KaZa%2013$

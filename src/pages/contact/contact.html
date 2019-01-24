@@ -1,0 +1,27 @@
+<style>
+
+</style>
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        m
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+     <p></p>
+    <ion-list>
+      <ion-item *ngFor="let data of data "
+              (click)="onSelect(data)"
+              [class.selected]="data === selectedata">
+      <h3>{{ data.nome }} (<a [ngStyle]="{'color':data.cor}">{{ data.confirma}}</a>)</h3>
+      <h3><a>Dia: </a>{{ data.datainicio}}</h3>
+      <p><a>Minhas Tarefas:</a></p>
+      <h3>{{data.tarefas}}</h3>
+      <p><a>Tarefas Sem Dono:</a></p>
+      <h3>{{data.nenhum}}</h3>
+      </ion-item>
+    </ion-list>
+  </ion-content> 
+
+

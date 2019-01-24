@@ -1,0 +1,37 @@
+<head>
+    <meta charset="utf-8"/>
+</head>
+<ion-header>
+    <ion-item>
+      <ion-title>Detalhes</ion-title>
+    </ion-item>
+  </ion-header>
+    <ion-content>
+        <ion-navbar>
+            <ion-title>Detalhes</ion-title>
+          </ion-navbar>
+         <h3>{{ evento }}</h3>
+        <ion-item>
+            <ion-select [(ngModel)]="eventosv"  (ionChange)= "onChange(eventosv)">
+              <ion-option value="1"selected={{datastp}}>Confirmado</ion-option>
+              <ion-option value="2" selected={{datasta}} >Não Confirmado</ion-option>
+            </ion-select>
+          </ion-item>
+          <button ion-button round (click)="novatarefa()">Nova Tarefa</button> 
+          <ion-label>Minhas Tarefas</ion-label>
+          <ion-list>
+              <ion-item *ngFor="let data of data"
+                      (click)="onminhas(data)"
+                      [class.selected]="data === selectedata">
+              <h3><a>{{ data.nome }}</a></h3>
+              </ion-item>
+            </ion-list>
+          <ion-label>Tarefas Sem Dono</ion-label> 
+          <ion-list>
+              <ion-item *ngFor="let datanen of datanen"
+                      (click)="onnaominhas(datanen)"
+                      [class.selected]="datanen === selectedata">
+              <h3><a>{{ datanen.nome }}</a></h3>
+              </ion-item>
+            </ion-list>
+    </ion-content>  
