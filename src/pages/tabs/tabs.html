@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <ion-item>
+            <a align="center">Casa Espírita Cristã</a> <img style="width: 30px; height: 18px;" src="img/logo_bg.png" item-end>   
+            <button id="notification-button" [navPush]="MensaPage" ion-button clear item-end>
+                <ion-icon name="notifications">
+                  <ion-badge id="notifications-badge" color="danger">{{total}}</ion-badge>
+                </ion-icon>
+              </button>
+              <button (click) = "logout()" ion-button clear item-end><ion-icon name="md-power"></ion-icon></button>
+            </ion-item>
+          </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-tabs>
+  <ion-tab [root]="tab3Root" tabTitle="Principal" tabIcon="contacts"(ionSelect) ="pagina()"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="Cadastros" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Meu Perfil" tabIcon="build"></ion-tab>
+</ion-tabs>
+
+ 

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>perfil</ion-title>
+  </ion-navbar>
+  <ion-navbar>
+    <ion-title>Minha Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>  
+  <ion-list>
+    <ion-item *ngFor="let data of data "
+            (click)="onSelect(data)"
+            [class.selected]="data === selectedata">
+    <p><a>Nome:</a></p>
+    <h3>{{ data.nome }}</h3>
+    <p><a>Email:</a></p>
+    <h3>{{data.email}}</h3>
+    <p><a>Senha:</a></p>
+    <h3>{{data.senha}}</h3>
+    <p><a>Telefone:</a></p>
+    <h3>{{data.tel}}</h3>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

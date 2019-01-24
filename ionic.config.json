@@ -1,0 +1,7 @@
+{
+  "name": "casa",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
